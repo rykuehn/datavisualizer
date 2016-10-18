@@ -41,11 +41,12 @@ class App extends Component {
     return (
       <div className="App">
       <Header /> 
-      <svg>
+      <svg >
       {this.state.data.map(flavor => <Chart  data={flavor}/>)}
       </svg>
 
       <EnterResponse  getIceCream={this.getIceCream.bind(this)}/>
+
       </div>
       );
   }

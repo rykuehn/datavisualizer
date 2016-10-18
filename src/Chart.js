@@ -5,21 +5,20 @@ import d3 from 'd3';
 class Chart extends Component {
   constructor(props){
     super(props);
-    var flavor = this.props.data.flavor;
-    var count = this.props.data.count;
-   console.log(count);
+   
   }
 
   render() {
-    var randomX = (Math.random() * screen.width) - 100;
-    var randomY = (Math.random() * 325)
+    var randomX = Math.random() * 450
+    var randomY = Math.random() * 250
 
   
     return (
-      <circle cx={randomX} cy={randomY} r={this.props.data.count * 40} fill='blue' stroke='gray' strokeWidth='2' />
-     
+        <circle cx={randomX} cy={randomY} r={this.props.data.count * 10} attribute={this.props.data.flavor} fill='rgba(140, 227, 166, .6)' />  
     )
   }
 };
 
 export default Chart;
+
+

@@ -5,7 +5,7 @@ class Header extends Component {
   render() {
     return (
       <div className='header'>
-        <h1> Visualize It </h1>
+        <h1> Data Visualizer </h1>
       </div>
     );
   }

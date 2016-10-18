@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 
-
-
 class EnterResponse extends Component {
   constructor(props){
     super(props);
@@ -46,3 +44,5 @@ class EnterResponse extends Component {
 };
 
 export default EnterResponse;
+
+
