@@ -12,43 +12,29 @@ class App extends Component {
     super();
 
     this.state = {
-      data: [
-      {flavor : 'mint', count: 0},
-      {flavor: 'strawberry', count: 0},
-      {flavor : 'vanilla', count: 0}
-      ]
+      data: []
     }
   }
 
   componentWillMount() {
-    $.ajax({
-      url: '/',
+   this.getIceCream();
+  }
+
+  getIceCream() {
+     $.ajax({
+      url: 'http://localhost:8080',
       type: 'GET',
+      dataType: 'json',
       success: data => {
-        console.log('get success', data)
+        console.log('success', data);
+        this.setState({data: data.responses});
       },
       error: data => {
         console.error('there was an error with the get request');
       }
     });
+
   }
-
-
-
-
-  updateCount () {
-    this.setState({count: this.state.count + 1});
-  }
-
-  handleSubmit (message) {
-    // post request
-  }
-
-  // $.ajax({
-  //   url: app.server,
-  //   type: 'GET',
-  //   data: { order: '-createdAt' },
-  //   contentType: 'application/json',
 
 
   render() {
@@ -56,10 +42,10 @@ class App extends Component {
       <div className="App">
       <Header /> 
       <svg>
-      {this.state.data.map(flavor => <Chart updateFunc={this.updateCount.bind(this)} data={flavor}/>)}
+      {this.state.data.map(flavor => <Chart  data={flavor}/>)}
       </svg>
 
-      <EnterResponse submit={this.handleSubmit.bind(this)}/>
+      <EnterResponse  getIceCream={this.getIceCream.bind(this)}/>
       </div>
       );
   }

@@ -6,13 +6,16 @@
     "react-scripts": "0.6.1"
   },
   "dependencies": {
+    "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
     "d3": "^4.2.7",
     "express": "^4.14.0",
     "jquery": "^3.1.1",
     "mongoose": "^4.6.4",
+    "mongoose-sequence": "^3.1.0",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "react-tooltip": "^3.2.1"
   },
   "scripts": {
     "start": "react-scripts start",

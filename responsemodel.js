@@ -1,12 +1,23 @@
 
 var mongoose = require('./db');
 
+
 var responseSchema = mongoose.Schema({
   flavor: String,
   count: Number
 });
 
-var Response = mongoose.model('Response', responseSchema);
+// responseSchema.statics.findAndModify = function (query, sort, doc, options, callback) {
+//   return this.collection.findAndModify(query, sort, doc, options, callback);
+// };
+
+// responseSchema.statics.increment = function (counter, callback) {
+//     return this.findByIdAndUpdate(counter, { $inc: { next: 1 } }, {new: true, upsert: true, select: {next: 1}}, callback);
+// };
 
 
-module.exports = Response;
+
+var FlavorModel = mongoose.model('Response', responseSchema);
+
+
+module.exports = FlavorModel;

@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import d3 from 'd3';
 
+
 class Chart extends Component {
   constructor(props){
     super(props);
-    console.log('Chart props', props)
     var flavor = this.props.data.flavor;
     var count = this.props.data.count;
-    var updateFunc = this.props.updateFunc;
+   console.log(count);
   }
 
   render() {
@@ -16,7 +16,7 @@ class Chart extends Component {
 
   
     return (
-      <circle cx={randomX} cy={randomY} r='22' fill='blue' stroke='gray' strokeWidth='2' />
+      <circle cx={randomX} cy={randomY} r={this.props.data.count * 40} fill='blue' stroke='gray' strokeWidth='2' />
      
     )
   }
