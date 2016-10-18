@@ -1,5 +1,7 @@
 var express = require('express');
 var parser = require('body-parser');
+//var mongoose = require('mongoose');
+require('./db');
 
 var app = express();
 
@@ -10,7 +12,8 @@ app.get('/', function(req, res){
 });
 
 app.post('/', function(req, res){
-  res.send('post works');
+  
+  res.send(req.body);
 });
 
 app.listen(8080, function(err){

@@ -22,12 +22,16 @@ class App extends Component {
     console.log(this.state.data[0].mint)
   }
 
+  updateCount () {
+    this.setState({count: this.state.count + 1});
+  }
+
   render() {
     return (
       <div className="App">
         <Header /> 
         <svg>
-        {this.state.data.map(flavor => <Chart data={flavor}/>)}
+        {this.state.data.map(flavor => <Chart updateFunc={this.updateCount.bind(this)} data={flavor}/>)}
         </svg>
         
         <EnterResponse />

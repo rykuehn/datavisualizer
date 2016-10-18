@@ -1,4 +1,4 @@
-## Data Visulizer ##
+## Data Visualizer ##
 Use this Data Visualizer to display responses from audience. The visualizer will group similar answers and render them in a way makes it easy to draw draw conclusions about the set of input data. 
 
 ## Summary ##

@@ -14,8 +14,9 @@ class EnterResponse extends Component {
     console.log('works')
     $('input[type="text"], textarea').val('')
 
-    //make a post request with the information
   }
+
+
 
   render() {
     return (
