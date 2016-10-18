@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 
-class EnterResponse extends Component {
-  constructor(){
-    super();
 
+
+class EnterResponse extends Component {
+  constructor(props){
+    super(props);
+console.log('response props')
   }
 
   onSubmit (event) {
     event.preventDefault();
     event.stopPropagation();
     console.log(event.target.response.value)
-    console.log('works')
+    
     $('input[type="text"], textarea').val('')
 
+    //handlePost(event.target.response.value);
   }
-
 
 
   render() {

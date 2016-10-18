@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './main.css';
 
-class Header extends React.Component {
+class Header extends Component {
   render() {
     return (
       <div className='header'>
