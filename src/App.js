@@ -41,6 +41,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+     
       <Header /> 
       <svg >
       {this.state.data.map(flavor => <Chart  data={flavor}/>)}

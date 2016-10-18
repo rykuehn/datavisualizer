@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import $ from 'jquery';
 
-class EnterResponse extends Component {
-  constructor(props){
-    super(props);
+class Login extends Component {
+  constructor(){
+    super();
 
-    this.state = {
-      flavor: '',
-      count: 0
-    }
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onSubmit (event) {
     event.preventDefault();
     event.stopPropagation();
+
+    var username= this._username.value;
+    var password=this._password.value;
+    $('input[type="text"], textarea').val('')
+    
     
     $.ajax({
       url: 'http://localhost:8080/newresponse',
@@ -35,14 +35,14 @@ class EnterResponse extends Component {
 
   render() {
     return (
-     <form onSubmit={this.onSubmit.bind(this)} className="MyForm">
-     <input className='answer' type="text" name="response" ref={(i) => this._flavor = i}/>
-     <button type="submit">Submit</button>
-     </form>
-     )
+      <form onSubmit={this.onSubmit.bind(this)} className="MyForm">
+        <input type="text" name="username" ref={(i) => this._username = i}/>
+        <input type="text" name="password" ref={(i) => this._password = i}/>
+        <button type="submit">Login</button>
+      </form>
+      )
+    
   }
-};
+}
 
-export default EnterResponse;
-
-
+export default Login;

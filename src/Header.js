@@ -17,10 +17,6 @@ class Header extends Component {
     this.setState({visible:false, text: this._question.value});
 
   }
-
-
-
-
   render() {
     return (
       <div>

@@ -10,7 +10,6 @@ class Clear extends Component {
   onSubmit (event) {
     event.preventDefault();
     event.stopPropagation();
-    console.log('clear')
   
     $.ajax({
       url: 'http://localhost:8080/clear',
@@ -24,6 +23,9 @@ class Clear extends Component {
         console.error('there was an error with the Clear Button get request');
       }
     });
+    
+
+
   }
 
   render() {

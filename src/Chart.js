@@ -5,20 +5,39 @@ import d3 from 'd3';
 class Chart extends Component {
   constructor(props){
     super(props);
+
+    this.state = {
+      hover: false,
+      randomX: null,
+      randomY: null,
+      
+
+    }
+   
+  }
+  componentWillMount(){
+    this.setState({randomX: Math.random() * 600});
+    this.setState({randomY: Math.random() * 350});
+  }
+
+  mouseOver(event) {
+    event.preventDefault();
+    this.setState({hover:true});
    
   }
 
-  randomColor () {
-    //generate a random rgb color
+  mouseOut() {
+    this.setState({hover:false});
   }
 
   render() {
-    var randomX = Math.random() * 450
-    var randomY = Math.random() * 250
-
-  
     return (
-        <circle cx={randomX} cy={randomY} r={this.props.data.count * 10} fill='#3F3FBF' opacity='.7'/>  
+
+        <g>
+          <circle cx={this.state.randomX} cy={this.state.randomY} onMouseOver={this.mouseOver.bind(this)} onMouseOut={this.mouseOut.bind(this)} r={this.props.data.count * 30} fill='#3F3FBF' opacity='.7'/> 
+          <text x={this.state.randomX} y={this.state.randomY} fontFamily="sans-serif" fontSize="20px" textAnchor="middle" fill="white">{this.props.data.flavor}</text> 
+          <text x={this.state.randomX} y={this.state.randomY} style={this.state.hover ? {} : {display: 'none'} } fontFamily="sans-serif" textAnchor="hanging" fontSize="90px" fill="orange">{this.props.data.count}</text> 
+        </g>
     )
   }
 };
