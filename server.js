@@ -25,6 +25,16 @@ app.get('/', function(req, res){
   });
 });
 
+app.get('/clear', function(req, res){
+  FlavorModel.remove({}, function(err, responses) {
+    if (err) {
+      return res.send('there was an error with clearing the database');
+    } else {
+      res.send('database is cleared')
+    }
+  })
+})
+
 app.post('/newresponse', function(req, res){
   var flavor = req.body.flavor
 
